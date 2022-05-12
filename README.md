@@ -10,6 +10,10 @@
 학습된 모델을 서버를 통해 라즈베리파이로 불러오고 실시간으로 카메라 센서를 이용하여 사진을 찍는다.   
 <img src="C:\Users\aaa\Desktop" width="450px" height="300px"></img>     
 찍힌 이미지가 학습시킨 사용자의 얼굴이고 초음파 센서 안으로 무언가 감지되면 (거리 30cm) 라즈베리파이의 usb port의 전원을 켜 선풍기를 동작시킨다.   
+##### #turn on all usb ports     
+<pre><code>os.system("sudo uhubctl -l 1-1 -a 1")</code></pre>   
+##### #turn off all usb ports     
+<pre><code>os.system("sudo uhubctl -l 1-1 -a 0")</code></pre>     
 반면 학습된 사용자의 얼굴이 아니거나 초음파 센서안으로 아무것도 감지되지 않은 경우(거리 30cm이상)에는 라즈베리파이의 usb port의 전원을 꺼 선풍기의 동작을 정지시킨다.    
 
 
