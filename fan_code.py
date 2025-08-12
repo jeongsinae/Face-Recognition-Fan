@@ -6,7 +6,7 @@ import RPi.GPIO as GPIO
 import picamera
 
 username = 'ddochi'
-passwd = 'passward'
+passwd = 'password'
 
 src = '/home/pi/Desktop/capture/img.jpg'
 dst = '/home/ddochi/Desktop/face/data/result/result/test.jpg'
