@@ -12,7 +12,7 @@ src = '/home/pi/Desktop/capture/img.jpg'
 dst = '/home/ddochi/Desktop/face/data/result/result/test.jpg'
 
 def put_file(src, dst): 
-    transport = paramiko.Transport('114.70.193.160', 22)
+    transport = paramiko.Transport('server', 22)
     transport.connect(username = username, password = passwd)
     sftp = paramiko.SFTPClient.from_transport(transport)
     sftp.put(src, dst)
@@ -22,7 +22,7 @@ def put_file(src, dst):
 def getResult():
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect('114.70.193.160', username=username, password=passwd)
+    ssh.connect('server', username=username, password=passwd)
 
     inter = '/home/ddochi/anaconda3/envs/my_env/bin/python3'
     path = '/home/ddochi/Desktop/face/original.py'
